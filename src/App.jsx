@@ -106,15 +106,10 @@ const App = () => {
           <span style={{ color: "gray" }}>WithMe</span>
         </h1>
       </div>
-      <div
-        style={{
-          position: "relative",
-          height: "500px",
-          margin: "auto",
-          marginTop: 25,
-        }}
-      >
-        <MainContainer style={{ paddingTop: "2rem", borderRadius: 6 }}>
+      <div className="container">
+        <MainContainer
+          style={{ paddingTop: "2rem", borderRadius: 6, padding: 0 }}
+        >
           <ChatContainer>
             <MessageList
               scrollBehavior="smooth"
@@ -126,7 +121,7 @@ const App = () => {
             >
               {messages.map((message, i) => {
                 console.log(message);
-                return <Message key={i} model={message} />;
+                return <Message key={i} model={message} className="chat" />;
               })}
             </MessageList>
             <MessageInput
